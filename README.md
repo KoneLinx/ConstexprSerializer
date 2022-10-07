@@ -9,6 +9,8 @@ The entire serializer is has been writen in a constexpr correct way. Therefore w
 
 This also means that the code is **free of any Undefined Behaviour**.
 
+Tests ares located in the .cpp files
+
 ### Serializer
 
 A buffer allowing you to write to and read from.
