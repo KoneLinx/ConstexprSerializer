@@ -8,7 +8,7 @@ static_assert(
 	[]
 	{
 
-		using dev::Layout;
+		using serializer_helper::Layout;
 
 		struct MyStruct {
 			char a = 'a';

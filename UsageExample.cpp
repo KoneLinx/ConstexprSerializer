@@ -6,7 +6,7 @@
 #include "SerializerIostreamHelper.h"
 
 // use layout without namespace calls all the time
-using dev::Layout;
+using serializer_helper::Layout;
 
 // An example of how to define a layout
 using MyLayout = Layout<
@@ -56,6 +56,7 @@ private:
 
 int main()
 {
+
 
 	// loose objects
 	std::vector<std::string> names{ "ann", "joseph", "catherine" };
