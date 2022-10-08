@@ -4,7 +4,6 @@
 #include <set>
 
 #include "SerializerIostreamHelper.h"
-#include "ConstexprSerializerBuffer.h"
 
 // use layout without namespace calls all the time
 using serializer_helper::Layout;
@@ -57,7 +56,6 @@ private:
 
 int main()
 {
-;
 
 	// loose objects
 	std::vector<std::string> names{ "ann", "joseph", "catherine" };
