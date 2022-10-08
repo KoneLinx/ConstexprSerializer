@@ -30,6 +30,16 @@ static_assert(
 );
 
 static_assert(
+	[] {
+		return Serializer{ "\xDE\xAF\xFA\xDE" }.read<unsigned long>() == (
+			std::endian::native == std::endian::big
+			? 0xDEAFFADEul : 0xDEFAAFDEul
+		);
+	} (), 
+	"Reinterpreting integers"
+);
+
+static_assert(
 	[]
 	{
 		std::wstring wstr{ L"Hello world" };

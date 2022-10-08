@@ -57,6 +57,24 @@ namespace serializer_helper
 #if defined(__cpp_lib_bit_cast)
 		constexpr
 #endif
+		static std::tuple<Objects...> Read(Stream& is) requires std::default_initializable<std::tuple<Objects...>>
+		{
+			std::tuple<Objects...> out{};
+			std::apply(
+				[&is](auto& ... objects)
+				{
+					if (!Read(is, objects...))
+						throw std::runtime_error{ "Read failed" };
+				},
+				out
+			);
+			return out;
+		}
+
+		template <typename Stream>
+#if defined(__cpp_lib_bit_cast)
+		constexpr
+#endif
 		static bool Write(Stream& os, Objects const& ... objects)
 		{
 			return (write(os, objects) && ...);
